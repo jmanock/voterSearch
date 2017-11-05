@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<link rel='stylesheet' href='https://unpkg.com/picnic@6/picnic.min.css'>
+<title>HelloWorld</title>
+<style>
+main{
+  width:90%;
+  max-width:800px;
+  margin:30px auto;
+}
+table, canvas{
+  width:100%;
+}
+h2{
+  padding-bottom:20px;
+}
+.card{
+  margin:0;
+}
+#map{
+  height:400px;
+}
+img{
+  width:100%;
+}
+</style>
+</head>
+<body>
+  <main>
+    <h1>Users</h1>
+    <ol>
+      {{#each users}}
+      <li>{{this.firstname}}  {{this.lastname}} {{this.city}} {{this.state}} {{this.age}}</li>
+      {{/each}}
+    </ol>
+  </main>
