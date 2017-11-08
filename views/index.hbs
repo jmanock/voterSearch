@@ -23,14 +23,17 @@ h2{
 img{
   width:100%;
 }
+.vTeam{
+  color:orange;
+}
 </style>
 </head>
 <body>
   <main>
-    <h1>Week 9</h1>
+    <h1>Week 1</h1>
     <ul>
       {{#each users}}
-      <li>{{this.visitorteam}} {{this.visitorscore}} @ {{this.hometeam}} {{this.homescore}}</li>
+      <li><span class='vTeam'>{{this.visitorteam}}</span> <span class='vScore'>{{this.visitorscore}}</span> <span class='hTeam'>{{this.hometeam}}</span> <span class='hScore'>{{this.homescore}}</span></li>
       {{/each}}
     </ul>
   </main>
