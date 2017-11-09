@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel='stylesheet' href='https://unpkg.com/picnic@6/picnic.min.css'>
-<title>HelloWorld</title>
-<style>
-main{
-  width:90%;
+  <link rel='stylesheet' href='https://unpkg.com/picnic@6/picnic.min.css'>
+  <title>HelloWorld</title>
+  <style>
+  main{
+    width:90%;
   max-width:800px;
   margin:30px auto;
 }
@@ -31,9 +31,9 @@ img{
 <body>
   <main>
     <h1>Week 1</h1>
-    <ul>
+    <ol>
       {{#each users}}
-      <li><span class='vTeam'>{{this.visitorteam}}</span> <span class='vScore'>{{this.visitorscore}}</span> <span class='hTeam'>{{this.hometeam}}</span> <span class='hScore'>{{this.homescore}}</span></li>
+      <li><span class='vTeam'>{{this.visitorteam}}</span> <span class='vScore'>{{this.visitorscore}}</span> @ <span class='hTeam'>{{this.hometeam}}</span> <span class='hScore'>{{this.homescore}}</span></li>
       {{/each}}
-    </ul>
+    </ol>
   </main>

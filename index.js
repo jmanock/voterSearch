@@ -11,11 +11,32 @@ const drive = require('drive-db')({
 const homeRoute = get('/', async () =>{
   const db = await drive.load();
   console.log('Updated!!!');
-  return render('index.hbs', {users:db.find()});
+  return render('index.hbs', {users:db.find().limit(31,47)});
 });
 
 server(3000,homeRoute);
 setInterval(server,1500000);
+
+/*
+~ Week One 0 - 15
+~ Week Two 15 - 31
+~ Week Three 31 - 47
+~ Week Four 47 - 63
+~ Week Five 63 - 77
+~ Week Six 77 - 91
+~ Week Seven 91 - 106
+~ Week Eight 106 - 119
+~ Week Nine 119 - 132
+~ Week Ten 132 - 146
+~ Week Eleven 146 - 160
+~ Week Twelve 160 - 176
+~ Week Thirteen 176 - 192
+~ Week Fourteen 192 - 208
+~ Week Fifteen 208 - 224
+~ Week Sixteen 224 - 240
+~ Week Seventeen 240 - 256
+*/
+
 
 /*
   ~ Week One 11 - 19, 110 - 115
