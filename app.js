@@ -31,24 +31,28 @@ app.get('/search', function(req, res){
   var lastName = req.query.lastName;
   var fullName = firstName + ' ' + lastName;
 
-  console.log(fullName);
+//  console.log(fullName);
 
   var ResultsArray = [];
-  var instream = fs.createReadStream('public/folder/2017sep.txt');
+   var instream = fs.createReadStream('public/folder/2017sep.txt');
+  //var instream = fs.createReadStream('public/folder/2012Florida.txt');
   var outstream = new stream;
   var rl = readline.createInterface(instream, outstream);
 
   rl.on('line', function(line){
     var results = line.toUpperCase();
-    if(results.includes(firstName) && results.includes(lastName)){
+     if(results.includes(firstName) && results.includes(lastName)){
+
       results = results.split(/[\t]+/);
-      console.log(results.length);
+      console.log(results.length, results);
+
       /*
        ~ Might be away to check stats on length
       */
       var email;
       for(var i = 0; i<results.length; i++){
         //console.log(results[i], results[i].length);
+
       }
     }
   }).on('close', function(){
