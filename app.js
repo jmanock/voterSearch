@@ -34,7 +34,7 @@ app.get('/search', function(req, res){
   console.log(fullName);
 
   var ResultsArray = [];
-  var instream = fs.createReadStream('public/2017aug.txt');
+  var instream = fs.createReadStream('public/folder/2017sep.txt');
   var outstream = new stream;
   var rl = readline.createInterface(instream, outstream);
 
@@ -43,6 +43,9 @@ app.get('/search', function(req, res){
     if(results.includes(firstName) && results.includes(lastName)){
       results = results.split(/[\t]+/);
       console.log(results.length);
+      /*
+       ~ Might be away to check stats on length
+      */
       var email;
       for(var i = 0; i<results.length; i++){
         //console.log(results[i], results[i].length);
