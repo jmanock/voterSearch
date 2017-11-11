@@ -42,9 +42,10 @@ app.get('/search', function(req, res){
     var results = line.toUpperCase();
     if(results.includes(firstName) && results.includes(lastName)){
       results = results.split(/[\t]+/);
+      console.log(results.length);
       var email;
       for(var i = 0; i<results.length; i++){
-        console.log(results[i]);
+        //console.log(results[i], results[i].length);
       }
     }
   }).on('close', function(){

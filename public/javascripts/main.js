@@ -1,8 +1,10 @@
 $(document).ready(function(){
   $('#search').on('keyup', function(e){
     if(e.keyCode === 13){
+      e.preventDefault();
       var search = $(this).val();
       var split = search.split(' ');
+
       var firstName = split[0].toUpperCase();
       var lastName = split[1].toUpperCase();
 
@@ -12,8 +14,10 @@ $(document).ready(function(){
       };
 
       $.get('/search', params, function(data){
-        
+
       });
+      e.currentTarget.value = '';
     }
+
   })
 });
