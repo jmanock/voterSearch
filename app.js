@@ -53,10 +53,10 @@ app.get('/search', function(req, res){
         var LastName = results[2];
         if(results[i].includes('/')){
           var registration = results[i];
-          //var birthday = results[i+1];
-          console.log(registration);
+          var dob = results[i-1];
         }
       }
+      console.log(LastName, registration, dob);
     }
   }).on('close', function(){
     /*
