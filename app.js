@@ -31,7 +31,7 @@ app.get('/search', function(req, res){
   var lastName = req.query.lastName;
   var fullName = firstName + ' ' + lastName;
 
-//  console.log(fullName);
+ console.log(fullName);
 
   var ResultsArray = [];
    var instream = fs.createReadStream('public/folder/2017sep.txt');
@@ -44,15 +44,18 @@ app.get('/search', function(req, res){
      if(results.includes(firstName) && results.includes(lastName)){
 
       results = results.split(/[\t]+/);
-      console.log(results.length, results);
+      // console.log(results.length);
 
-      /*
-       ~ Might be away to check stats on length
-      */
       var email;
       for(var i = 0; i<results.length; i++){
-        //console.log(results[i], results[i].length);
-
+        var CountyCode = results[0];
+        var VoterId = results[1];
+        var LastName = results[2];
+        if(results[i].includes('/')){
+          var registration = results[i];
+          //var birthday = results[i+1];
+          console.log(registration);
+        }
       }
     }
   }).on('close', function(){
