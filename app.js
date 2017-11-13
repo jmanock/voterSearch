@@ -44,9 +44,20 @@ app.get('/search', function(req, res){
      if(results.includes(firstName) && results.includes(lastName)){
 
       results = results.split(/[\t]+/);
-
+       //console.log(results)
       var email;
+
       for(var i = 0; i<results.length; i++){
+
+        if(results[i].length >= 5 && i !== 1){
+          if(!isNaN(results[i])){
+            if(results[i].includes('.')){
+              // This should always be zip
+            }else{
+              var zip = results[i];
+            }
+          }
+        }
         /*
           ~ Things I want back
             - Dob √
@@ -54,12 +65,12 @@ app.get('/search', function(req, res){
             - LastName √
             - Address
             - Country Code √
+            - Age √
           ~ Maybe
             - Gender √
             - Phone Number
             - Email
         */
-
         var CountyCode = results[0];
         var VoterId = results[1];
         var LastName = results[2];
@@ -78,8 +89,8 @@ app.get('/search', function(req, res){
           age --;
         }
       }
-      // console.log('Birtday: ', dob, ' LastName: ', LastName);
-      console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
+      //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
+      console.log(zip, age, gender, dob);
     }
   }).on('close', function(){
     /*
