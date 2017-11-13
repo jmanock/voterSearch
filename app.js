@@ -60,10 +60,11 @@ app.get('/search', function(req, res){
         }
 
         // Find Address
-        if(results[i].includes(' ')){
+        if(results[i].includes('  ')){
           // Two addresses is going to be a problem
           // Needs to have a number and letters
-          // Getting back citys that are two words
+          // Got addresses but no apt #?
+
           if(isNaN(results[i])){
             console.log(results[i]);
           }
