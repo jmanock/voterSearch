@@ -44,10 +44,21 @@ app.get('/search', function(req, res){
      if(results.includes(firstName) && results.includes(lastName)){
 
       results = results.split(/[\t]+/);
-      // console.log(results.length);
 
       var email;
       for(var i = 0; i<results.length; i++){
+        /*
+          ~ Things I want back
+            - Dob √
+            - Name
+            - Address
+            - Country Code √
+          ~ Maybe
+            - Gender
+            - Phone Number
+            - Email
+        */
+        // First Name should could just check first few indexes
         var CountyCode = results[0];
         var VoterId = results[1];
         var LastName = results[2];
@@ -56,7 +67,7 @@ app.get('/search', function(req, res){
           var dob = results[i-1];
         }
       }
-      console.log(LastName, registration, dob);
+      console.log('Birtday: ', dob, ' LastName: ', LastName);
     }
   }).on('close', function(){
     /*
