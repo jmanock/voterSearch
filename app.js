@@ -48,7 +48,7 @@ app.get('/search', function(req, res){
       var email;
 
       for(var i = 0; i<results.length; i++){
-
+        // Check for zip
         if(results[i].length >= 5 && i !== 1){
           if(!isNaN(results[i])){
             if(results[i].includes('.')){
@@ -58,6 +58,12 @@ app.get('/search', function(req, res){
             }
           }
         }
+
+        // Find Address
+        if(results[i].includes(' ')){
+          // Have to find the index with num and char
+          console.log(results[]);
+        }
         /*
           ~ Things I want back
             - Dob √
@@ -66,6 +72,7 @@ app.get('/search', function(req, res){
             - Address
             - Country Code √
             - Age √
+            - Zip √
           ~ Maybe
             - Gender √
             - Phone Number
@@ -90,7 +97,7 @@ app.get('/search', function(req, res){
         }
       }
       //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
-      console.log(zip, age, gender, dob);
+      //console.log(zip, age, gender, dob);
     }
   }).on('close', function(){
     /*
