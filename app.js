@@ -50,24 +50,36 @@ app.get('/search', function(req, res){
         /*
           ~ Things I want back
             - Dob √
-            - Name
+            - FirstName
+            - LastName √
             - Address
             - Country Code √
           ~ Maybe
-            - Gender
+            - Gender √
             - Phone Number
             - Email
         */
-        // First Name should could just check first few indexes
+
         var CountyCode = results[0];
         var VoterId = results[1];
         var LastName = results[2];
+
         if(results[i].includes('/')){
           var registration = results[i];
           var dob = results[i-1];
+          var race = results[i-2];
+          var gender = results[i-3];
+        }
+        var today = new Date();
+        var birthDate = new Date(dob);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if(m < 0 || (m === 0 && today.getDate() < birthDate.getDate())){
+          age --;
         }
       }
-      console.log('Birtday: ', dob, ' LastName: ', LastName);
+      // console.log('Birtday: ', dob, ' LastName: ', LastName);
+      console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
     }
   }).on('close', function(){
     /*
