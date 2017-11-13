@@ -61,8 +61,10 @@ app.get('/search', function(req, res){
 
         // Find Address
         if(results[i].includes(' ')){
-          // Have to find the index with num and char
-          console.log(results[]);
+          // Two addresses is going to be a problem        
+          if(isNaN(results[i])){
+            //console.log(results[i]);
+          }
         }
         /*
           ~ Things I want back
