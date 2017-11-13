@@ -41,8 +41,7 @@ app.get('/search', function(req, res){
 
   rl.on('line', function(line){
     var results = line.toUpperCase();
-     if(results.includes(firstName) && results.includes(lastName)){
-
+    if(results.includes(firstName) && results.includes(lastName)){
       results = results.split(/[\t]+/);
        //console.log(results)
       var email;
@@ -66,7 +65,7 @@ app.get('/search', function(req, res){
           // Got addresses but no apt #?
 
           if(isNaN(results[i])){
-            console.log(results[i]);
+            //console.log(results[i]);
           }
         }
         /*
@@ -101,8 +100,14 @@ app.get('/search', function(req, res){
           age --;
         }
       }
+
       //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
-      //console.log(zip, age, gender, dob);
+
+      // if(LastName === lastName){
+      //   console.log(CountyCode, zip, age, gender, dob, LastName);
+      // }
+
+      //console.log(zip, age, gender, dob, LastName);
     }
   }).on('close', function(){
     /*
