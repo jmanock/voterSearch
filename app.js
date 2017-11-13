@@ -61,9 +61,11 @@ app.get('/search', function(req, res){
 
         // Find Address
         if(results[i].includes(' ')){
-          // Two addresses is going to be a problem        
+          // Two addresses is going to be a problem
+          // Needs to have a number and letters
+          // Getting back citys that are two words
           if(isNaN(results[i])){
-            //console.log(results[i]);
+            console.log(results[i]);
           }
         }
         /*
