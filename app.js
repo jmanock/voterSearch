@@ -63,7 +63,7 @@ app.get('/search', function(req, res){
 
           if(isNaN(results[i]) && i < 10){
             var address = results[i];
-
+            var city = results[i+2];
             //console.log(address);
             if(results[i+1] !== ' '){
               var address2 = results[i+1];
@@ -77,6 +77,7 @@ app.get('/search', function(req, res){
             - FirstName
             - LastName √
             - Address √
+            - Address 2 √
             - Country Code √
             - Age √
             - Zip √
@@ -109,9 +110,9 @@ app.get('/search', function(req, res){
 
       if(LastName === lastName){
         if(address2 !== undefined){
-          console.log(CountyCode, zip, age, gender, dob, LastName, address, address2);
+          console.log(CountyCode, zip, age, gender, dob, LastName, address, address2, city);
         }else{
-          console.log(CountyCode, zip, age, gender, dob, LastName, address);
+          console.log(CountyCode, zip, age, gender, dob, LastName, address, city);
         }
       }
 
