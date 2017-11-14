@@ -108,7 +108,11 @@ app.get('/search', function(req, res){
       //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
 
       if(LastName === lastName){
-        console.log(CountyCode, zip, age, gender, dob, LastName, address, address2);
+        if(address2 !== undefined){
+          console.log(CountyCode, zip, age, gender, dob, LastName, address, address2);
+        }else{
+          console.log(CountyCode, zip, age, gender, dob, LastName, address);
+        }
       }
 
       //console.log(zip, age, gender, dob, LastName);
