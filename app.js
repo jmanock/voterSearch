@@ -61,8 +61,9 @@ app.get('/search', function(req, res){
         // Find Address
         if(results[i].includes('  ')){
           // Two addresses is going to be a problem
+          // Might check `i` number should be 10 or less
 
-          if(isNaN(results[i])){
+          if(isNaN(results[i]) && i < 10){
             var address = results[i];
             var address2 = results[i+1];
             console.log(address);
