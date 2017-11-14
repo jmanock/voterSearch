@@ -81,7 +81,7 @@ app.get('/search', function(req, res){
             - Country Code √
             - Age √
             - Zip √
-            - City
+            - City √
           ~ Maybe
             - Gender √
             - Phone Number
