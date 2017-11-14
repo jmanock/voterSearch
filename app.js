@@ -60,15 +60,14 @@ app.get('/search', function(req, res){
 
         // Find Address
         if(results[i].includes('  ')){
-          // Two addresses is going to be a problem
-          // Might check `i` number should be 10 or less
 
           if(isNaN(results[i]) && i < 10){
             var address = results[i];
-            var address2 = results[i+1];
-            console.log(address);
-            if(address2 !== ' '){
-              console.log(address2);
+
+            //console.log(address);
+            if(results[i+1] !== ' '){
+              var address2 = results[i+1];
+              //console.log(address2);
             }
           }
         }
@@ -77,10 +76,11 @@ app.get('/search', function(req, res){
             - Dob √
             - FirstName
             - LastName √
-            - Address
+            - Address √
             - Country Code √
             - Age √
             - Zip √
+            - City
           ~ Maybe
             - Gender √
             - Phone Number
@@ -107,9 +107,9 @@ app.get('/search', function(req, res){
 
       //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
 
-      // if(LastName === lastName){
-      //   console.log(CountyCode, zip, age, gender, dob, LastName);
-      // }
+      if(LastName === lastName){
+        console.log(CountyCode, zip, age, gender, dob, LastName, address, address2);
+      }
 
       //console.log(zip, age, gender, dob, LastName);
     }
