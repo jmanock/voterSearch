@@ -108,6 +108,8 @@ app.get('/search', function(req, res){
 
       //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
 
+      // Checks for last name to match with and without address2
+
       if(LastName === lastName){
         if(address2 !== undefined){
           console.log(CountyCode, zip, age, gender, dob, LastName, address, address2, city);
