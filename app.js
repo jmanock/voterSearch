@@ -43,10 +43,14 @@ app.get('/search', function(req, res){
     var results = line.toUpperCase();
     if(results.includes(firstName) && results.includes(lastName)){
       results = results.split(/[\t]+/);
-       //console.log(results)
+      console.log(results);
       var email;
 
       for(var i = 0; i<results.length; i++){
+        // Find where the match is?
+        if(lastName === results[i]){
+          console.log(i);
+        }
         // Check for zip
         if(results[i].length >= 5 && i !== 1){
           if(!isNaN(results[i])){
@@ -112,9 +116,9 @@ app.get('/search', function(req, res){
 
       if(LastName === lastName){
         if(address2 !== undefined){
-          console.log(CountyCode, zip, age, gender, dob, LastName, address, address2, city);
+          //console.log(CountyCode, zip, age, gender, dob, LastName, address, address2, city);
         }else{
-          console.log(CountyCode, zip, age, gender, dob, LastName, address, city);
+          //console.log(CountyCode, zip, age, gender, dob, LastName, address, city);
         }
       }
 
