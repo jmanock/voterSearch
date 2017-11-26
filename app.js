@@ -47,15 +47,17 @@ app.get('/search', function(req, res){
       var email;
 
       for(var i = 0; i<results.length; i++){
-        // This finds first name and last name 
+        // This finds first name and last name
         if(lastName == results[i]){
           if(i < 5){
-            console.log(results[i]);
+            //console.log(results[i]);
+            var rLastName = results[i];
           }
         }
         if(firstName === results[i]){
           if(i < 5){
-            console.log(results[i]);
+            //console.log(results[i]);
+            var rFirstName = results[i];
           }
         }
         // Check for zip
@@ -83,20 +85,9 @@ app.get('/search', function(req, res){
           }
         }
         /*
-          ~ Things I want back
-            - Dob √
-            - FirstName
-            - LastName √
-            - Address √
-            - Address 2 √
-            - Country Code √
-            - Age √
-            - Zip √
-            - City √
-          ~ Maybe
-            - Gender √
-            - Phone Number
-            - Email
+          BUG
+          ~ How to handel errors
+          ~ How to handle `'`
         */
         var CountyCode = results[0];
         var VoterId = results[1];
@@ -117,19 +108,13 @@ app.get('/search', function(req, res){
         }
       }
 
-      //console.log('Age:', age, 'Dob:', dob, 'Gender:', gender);
-
-      // Checks for last name to match with and without address2
-
-      if(LastName === lastName){
+      if(rFirstName !== undefined && rLastName !== undefined){
         if(address2 !== undefined){
-          //console.log(CountyCode, zip, age, gender, dob, LastName, address, address2, city);
+          console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, address2, city);
         }else{
-          //console.log(CountyCode, zip, age, gender, dob, LastName, address, city);
+          console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, city);
         }
       }
-
-      //console.log(zip, age, gender, dob, LastName);
     }
   }).on('close', function(){
     /*
