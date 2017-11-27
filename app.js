@@ -107,12 +107,36 @@ app.get('/search', function(req, res){
           age --;
         }
       }
-
+      var something = [];
       if(rFirstName !== undefined && rLastName !== undefined){
+        // This should be able to send back
         if(address2 !== undefined){
           console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, address2, city);
+          something.push({
+            FirstName:rFirstName,
+            LastName:rLastName,
+            CountyCode:CountyCode,
+            Dob:dob,
+            Address:address,
+            Address2:address2,
+            City:city,
+            Zip:zip,
+            Age:age,
+            Gender:gender
+          });
         }else{
           console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, city);
+          something.push({
+            FirstName:rFirstName,
+            LastName:rLastName,
+            CountyCode:CountyCode,
+            Age:age,
+            Zip:zip,
+            Gender:gender,
+            Dob:dob,
+            Address:address,
+            City:city
+          });
         }
       }
     }
