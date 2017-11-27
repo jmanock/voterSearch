@@ -107,12 +107,12 @@ app.get('/search', function(req, res){
           age --;
         }
       }
-      var something = [];
+      var Results = [];
       if(rFirstName !== undefined && rLastName !== undefined){
         // This should be able to send back
         if(address2 !== undefined){
-          console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, address2, city);
-          something.push({
+          //console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, address2, city);
+          Results.push({
             FirstName:rFirstName,
             LastName:rLastName,
             CountyCode:CountyCode,
@@ -125,8 +125,8 @@ app.get('/search', function(req, res){
             Gender:gender
           });
         }else{
-          console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, city);
-          something.push({
+          //console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, city);
+          Results.push({
             FirstName:rFirstName,
             LastName:rLastName,
             CountyCode:CountyCode,
