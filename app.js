@@ -38,7 +38,7 @@ app.get('/search', function(req, res){
   //var instream = fs.createReadStream('public/folder/2012Florida.txt');
   var outstream = new stream;
   var rl = readline.createInterface(instream, outstream);
-
+  var Results = [];
   rl.on('line', function(line){
     var results = line.toUpperCase();
     if(results.includes(firstName) && results.includes(lastName)){
@@ -107,7 +107,7 @@ app.get('/search', function(req, res){
           age --;
         }
       }
-      var Results = [];
+
       if(rFirstName !== undefined && rLastName !== undefined){
         // This should be able to send back
         if(address2 !== undefined){
@@ -138,12 +138,13 @@ app.get('/search', function(req, res){
             City:city
           });
         }
+        return Results;
       }
     }
   }).on('close', function(){
-    /*
-      res.send(ResultsArray)
-    */
+
+      res.send(Results);
+
     console.log('AllDone!');
   })
 });
