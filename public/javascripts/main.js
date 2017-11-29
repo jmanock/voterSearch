@@ -16,21 +16,14 @@ $(document).ready(function(){
       $.get('/search', params, function(data){
         if(data instanceof Array){
           for(var i = 0; i<data.length; i++){
-            if(data[i] === 'Address2'){
-              console.log('Yes');
+            var add2 = data[i].Address2;
+            if(add2 !== undefined){
+              // console.log('Yess');
+              console.log(data[i]);
             }else{
-              console.log('No');
+              // console.log('No!');
             }
-            // var fName = data.FirstName;
-            // var lName = data.LastName;
-            // var fullName = fName + ' '+ lName;
-            // var age = data.Age;
-            // var city = data.City;
-            // var zip = data.Zip;
-            // var address = data.Address;
-            // var address2 = data.Address2;
-            // var gender = data.Gender;
-            // var birthday = data.Dob;
+            var fName = data[i].fName;
           }
         }
       });
