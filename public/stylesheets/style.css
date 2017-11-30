@@ -1,11 +1,11 @@
 body{
-  /*font-family:;*/
+
 }
 input{
   width:500px;
   height:70px;
   font-size:2.5em;
-  border-radius:18px;
+  border-radius:10px;
   margin-left:25%;
 }
 
@@ -13,4 +13,19 @@ h1{
   text-align:center;
   font-size:3em;
   color:gray;
+}
+#left, #right{
+  z-index:-1;
+  top:0;
+  bottom:0;
+  width:55px;
+  background:#eaeaea;
+  position:fixed;
+  box-shadow:6px 0 15px -4px #888888, -6px 0 8px -4px #888888;
+}
+#left{
+  left:0;
+}
+#right{
+  right:0;
 }
