@@ -1,5 +1,5 @@
 body{
-
+  font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;
 }
 input{
   width:500px;
@@ -77,6 +77,9 @@ table th{
   text-align:center;
   background-color:#4caf50;
   color:white;
+}
+a{
+  color:blue;
 }
 /*table, td, th{
   border:1px solid black;

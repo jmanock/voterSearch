@@ -1,16 +1,21 @@
 $(document).ready(function(){
   $('#loader').hide();
   $('#search').on('keyup', function(e){
-    if(e.keyCode === 13){
+    var search = $(this).val();
+    var split = search.split(' ');
+console.log(search);
+    if(e.keyCode === 13 && search !== ' '){
       // Need to check that something is there
       e.preventDefault();
 
       $('.res').empty();
       $('#loader').show();
 
-      var search = $(this).val();
-      var split = search.split(' ');
-
+      // var search = $(this).val();
+      // var split = search.split(' ');
+      // if(search === ' '){
+      //   console.log('Nothing is there stupid');
+      // }
       if(split.length !== 2){
         console.log('this should get rejected');
       }
@@ -23,12 +28,6 @@ $(document).ready(function(){
       };
 
       $.get('/search', params, function(data){
-        /* todo
-          ~ Messages if nothing returns
-          ~ Enter button on mobile
-          ~ favicon
-
-        */
         if(data instanceof Array){
           $('#loader').hide();
           for(var i = 0; i<data.length; i++){
@@ -69,10 +68,12 @@ $(document).ready(function(){
             }
 
           }
+        }else{
+          console.log('Nothing to see here?');
         }
-      });
+      }); // End Search
       e.currentTarget.value = '';
     }
 
-  })
+  });
 });
