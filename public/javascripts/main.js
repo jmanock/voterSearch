@@ -25,7 +25,7 @@ $(document).ready(function(){
       $.get('/search', params, function(data){
         /* todo
           ~ Messages if nothing returns
-          ~ Maybe a crash report or errors
+          ~ Enter button on mobile
           ~ favicon
 
         */
