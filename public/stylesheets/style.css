@@ -89,3 +89,26 @@ a{
   right:65px;
   cursor:pointer;
 }
+
+@media only screen and (max-width:760px){
+  body{
+    font-size:.7em;
+  }
+  #left,#right{
+    display:none;
+  }
+  input{
+    width:100%;
+    height:35px;
+    font-size:1.5em;
+    border-radius:10px;
+    margin-left:0;
+  }
+  table{
+    margin-left:0;
+    width:100%;
+  }
+  .fa{
+    right:10px;
+  }
+}
