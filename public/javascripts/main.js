@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('#loader').hide();
   $('#search').on('keyup', function(e){
     if(e.keyCode === 13){
+      // Need to check that something is there
       e.preventDefault();
 
       $('.res').empty();
@@ -24,6 +25,9 @@ $(document).ready(function(){
       $.get('/search', params, function(data){
         /* todo
           ~ Messages if nothing returns
+          ~ Maybe a crash report or errors
+          ~ favicon
+
         */
         if(data instanceof Array){
           $('#loader').hide();
