@@ -34,8 +34,8 @@ app.get('/search', function(req, res){
  console.log(fullName);
 
   var ResultsArray = [];
-   //var instream = fs.createReadStream('public/folder/2017sep.txt');
-  var instream = fs.createReadStream('public/folder/2012Florida.txt');
+  var instream = fs.createReadStream('public/folder/2017sep.txt');
+  //var instream = fs.createReadStream('public/folder/2012Florida.txt');
   var outstream = new stream;
   var rl = readline.createInterface(instream, outstream);
   var Results = [];
@@ -113,12 +113,15 @@ app.get('/search', function(req, res){
       }
 
       // Google Url
-      if(address !== ' * '){
+
+      if(address === undefined){
+        console.log(results);
+      }else{
         var urlAdd = address.replace(/\s+/g,'+');
         var gAddress = 'https://www.google.com/maps/place/'+urlAdd+'+'+zip;
-      }else{
-        console.log(results);
       }
+
+
 
 
       if(rFirstName !== undefined && rLastName !== undefined){
@@ -158,7 +161,7 @@ app.get('/search', function(req, res){
     }
   }).on('close', function(){
 
-      //res.send(Results);
+      res.send(Results);
 
     console.log('AllDone!');
   })
