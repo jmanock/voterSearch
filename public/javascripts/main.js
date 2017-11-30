@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('#search').on('keyup', function(e){
     if(e.keyCode === 13){
       e.preventDefault();
-      $('td').empty();
+      $('.res').empty();
       $('#loader').show();
       var search = $(this).val();
       var split = search.split(' ');
@@ -18,10 +18,8 @@ $(document).ready(function(){
 
       $.get('/search', params, function(data){
         /* todo
-          ~ add spinner or new page
-
-          ~ Make links?
-          ~ iFrame, new page for results?
+          ~ Check for one space
+          ~ Error message if more than one space
         */
         if(data instanceof Array){
           $('#loader').hide();
@@ -37,28 +35,25 @@ $(document).ready(function(){
             var city = data[i].City;
             var gender = data[i].Gender;
             var zip = data[i].Zip;
+            var urlAdd = data[i].Url;
             if(add2 !== undefined){
-              //$('#results').append(fullName, address, add2, city, age, birthday, gender, zip);
-
               $('thead').append(
                 '<tr class="res">'
                 +'<td>'+fullName+'</td>'
                 +'<td>'+gender+'</td>'
                 +'<td>'+age+'</td>'
-                +'<td>'+address+'</td>'
+                +'<td><a target="_blank" href='+urlAdd+'>'+address+'</a></td>'
                 +'<td>'+add2+'</td>'
                 +'<td>'+city+'</td>'
                 +'<td>'+zip+'</td>'
               );
             }else{
-              //$('#results').append(fullName, address, city, age, birthday, gender, zip);
-
               $('thead').append(
-                '<tr>'
+                '<tr class="res">'
                 +'<td>'+fullName+'</td>'
                 +'<td>'+gender+'</td>'
                 +'<td>'+age+'</td>'
-                +'<td>'+address+'</td>'
+                +'<td><a target="_blank" href='+urlAdd+'>'+address+'</a></td>'
                 +'<td></td>'
                 +'<td>'+city+'</td>'
                 +'<td>'+zip+'</td>'

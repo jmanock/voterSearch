@@ -107,7 +107,14 @@ app.get('/search', function(req, res){
           age --;
         }
       }
-
+      // Zip should only be 5 long
+      if(zip > 5){
+        zip = zip.substring(0,5);
+      }
+      
+      // Google Url
+      var urlAdd = address.replace(/\s+/g,'+');
+      var gAddress = 'https://www.google.com/maps/place/'+urlAdd+zip;
       if(rFirstName !== undefined && rLastName !== undefined){
         // This should be able to send back
         if(address2 !== undefined){
@@ -122,7 +129,8 @@ app.get('/search', function(req, res){
             City:city,
             Zip:zip,
             Age:age,
-            Gender:gender
+            Gender:gender,
+            Url:gAddress
           });
         }else{
           //console.log(rFirstName, rLastName, CountyCode, zip, age, gender, dob, address, city);
@@ -135,7 +143,8 @@ app.get('/search', function(req, res){
             Gender:gender,
             Dob:dob,
             Address:address,
-            City:city
+            City:city,
+            Url:gAddress
           });
         }
         return Results;
