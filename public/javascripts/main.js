@@ -13,7 +13,7 @@ $(document).ready(function(){
       }else{
         $('.res').empty();
         $('#loader').show();
-
+        $('input').prop('disabled', true);
         var firstName = split[0].toUpperCase();
         var lastName = split[1].toUpperCase();
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
         $.get('/search', params, function(data){
           if(data instanceof Array){
             $('#loader').hide();
-
+            $('input').prop('disabled', false);
             for(var i = 0; i<data.length; i++){
               var add2 = data[i].Address2;
               var fName = data[i].FirstName;

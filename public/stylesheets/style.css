@@ -82,19 +82,10 @@ table th{
 a{
   color:blue;
 }
-/*table, td, th{
-  border:1px solid black;
+.fa{
+  color:#4caf50;
+  position:absolute;
+  top:0;
+  right:65px;
+  cursor:pointer;
 }
-table{
-  border-collapse:collapse;
-  margin-left:60px;
-  margin-right:60px;
-  margin-top:25px;
-  width:90%;
-}
-th{
-  height:50px;
-}
-tr{
-  text-align:center;
-}*/
