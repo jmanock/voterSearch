@@ -9,9 +9,7 @@ $(document).ready(function(){
 
       var search = $(this).val();
       var split = search.split(' ');
-      // Working on Errors
-      // Only one space
-      console.log(split.length);
+
       if(split.length !== 2){
         console.log('this should get rejected');
       }
@@ -25,8 +23,7 @@ $(document).ready(function(){
 
       $.get('/search', params, function(data){
         /* todo
-          ~ Check for one space
-          ~ Error message if more than one space
+          ~ Messages if nothing returns
         */
         if(data instanceof Array){
           $('#loader').hide();
