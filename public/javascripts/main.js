@@ -14,6 +14,11 @@ $(document).ready(function(){
       };
 
       $.get('/search', params, function(data){
+        /* todo
+          ~ style
+          ~ clear results with new search
+          ~ Make links?
+        */
         if(data instanceof Array){
           for(var i = 0; i<data.length; i++){
             var add2 = data[i].Address2;
@@ -28,9 +33,11 @@ $(document).ready(function(){
             var gender = data[i].Gender;
             var zip = data[i].Zip;
             if(add2 !== undefined){
-              console.log(fullName, address, add2, city, age, birthday, gender, zip);
+              // console.log(fullName, address, add2, city, age, birthday, gender, zip);
+              $('#results').append(fullName, address, add2, city, age, birthday, gender, zip);
             }else{
-              console.log(fullName, address, city, zip, age, birthday,gender);
+              //console.log(fullName, address, city, zip, age, birthday,gender);
+              $('#results').append(fullName, address, city, age, birthday, gender, zip);
             }
 
           }
