@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -115,6 +115,7 @@ app.get('/search', function(req, res){
       // Google Url
       var urlAdd = address.replace(/\s+/g,'+');
       var gAddress = 'https://www.google.com/maps/place/'+urlAdd+zip;
+      
       if(rFirstName !== undefined && rLastName !== undefined){
         // This should be able to send back
         if(address2 !== undefined){

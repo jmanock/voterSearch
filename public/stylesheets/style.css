@@ -12,7 +12,7 @@ input{
 h1{
   text-align:center;
   font-size:3em;
-  color:gray;
+  color:#4caf50;
 }
 #left, #right{
   z-index:-1;
@@ -60,6 +60,7 @@ table{
   margin-left:60px;
   margin-right:60px;
   margin-top:30px;
+  text-align:center;
 }
 table td, table th{
   border:1px solid #ddd;
