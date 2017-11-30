@@ -3,11 +3,18 @@ $(document).ready(function(){
   $('#search').on('keyup', function(e){
     if(e.keyCode === 13){
       e.preventDefault();
+
       $('.res').empty();
       $('#loader').show();
+
       var search = $(this).val();
       var split = search.split(' ');
-
+      // Working on Errors
+      // Only one space
+      console.log(split.length);
+      if(split.length !== 2){
+        console.log('this should get rejected');
+      }
       var firstName = split[0].toUpperCase();
       var lastName = split[1].toUpperCase();
 
