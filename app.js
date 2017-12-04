@@ -43,7 +43,7 @@ app.get('/search', function(req, res){
     var results = line.toUpperCase();
     if(results.includes(firstName) && results.includes(lastName)){
       results = results.split(/[\t]+/);
-      //console.log(results);
+      console.log(results);
       var email;
 
       for(var i = 0; i<results.length; i++){
